@@ -1,6 +1,22 @@
 # Estado da Trilha de Descoberta Computacional
 
-**Última atualização:** 2026-08-29 (`DISC-DEC-153`: NENHUMA onda 35 de
+**Última atualização:** 2026-10-25 (`DISC-DEC-154`: reconciliação de
+governança, SEM onda de matemática. Registra as mudanças externas de
+2026-10-12 feitas pelo autor humano fora da sessão (matriz de alocação de
+modelos, loops autônomos, diagnóstico das 16 linhas, daemon
+`autonomous_researcher.py`, `agent_memory/`, avaliação externa do corpus
+`openai/math` com 4 linhas `CLAIM_UNDER_AUDIT`) — alegações do corpus
+permanecem NÃO verificadas e NÃO aceitas. Higiene do daemon: auto-push
+desligado por padrão e restrito a ramos `research/*`; rollback/add/commit
+confinados a `agent_memory` e `research/auto_runs` (removido o
+`git clean -fd` da árvore inteira); trailer `Generated-By` em todo commit
+do daemon; novo gate fail-closed `00_GOVERNANCE/DAEMON_GATE.yaml`
+(`u12_universality` = rested por `DISC-DEC-153`). O ramo
+`origin/research/auto` (ciclos exploratórios 2026-10-20/22 da Linha D) NÃO
+foi mesclado — decisão humana pendente, assim como tolerância relativa no
+teste do ciclo de 2026-10-22. `C(γ)`, `H1` e correlatos seguem ABERTOS; nada
+matemático alterado.)
+Anterior: `DISC-DEC-153` (2026-08-29): NENHUMA onda 35 de
 matemática autorizada — decisão EXPLÍCITA de não-despacho, não uma
 omissão. Survey de portfolio dedicado constatou que AMBOS os fios
 matemáticos vivos de `u12_universality` estão agora corretamente

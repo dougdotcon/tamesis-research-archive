@@ -1,0 +1,9 @@
+# Gate do daemon autonomous_researcher.py (DISC-DEC-154).
+# Fail-closed: topico ausente deste arquivo, ou arquivo ausente => "rested"
+# (o daemon NAO despacha ciclo). Somente edicao humana ou um DISC-DEC muda
+# um topico para "open". O daemon nunca edita este arquivo.
+#
+# topico: open|rested   # justificativa
+u12_universality: rested        # DISC-DEC-153: H1/M-CLUST(b) e C(gamma) descansados; crossover == C(gamma) (Estagio 60)
+riemann_asymptotics: open       # inalterado desde 2026-10-12 (Linha E); revisar em proxima decisao humana
+openai_math_benchmarks: open    # inalterado desde 2026-10-12 (CLAIM_UNDER_AUDIT, sem alegacao aceita)

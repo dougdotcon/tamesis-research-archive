@@ -170,12 +170,35 @@ class EvalResult:
     error: Optional[str] = None
 
 
-class RatchetEvaluator:
-    """Executes immutable validation test suites. Enforces the strict progress gate."""
+DEFAULT_SCOPE = ("agent_memory", "research/auto_runs")
+DEFAULT_PUSH_PREFIX = "research/"
+PROVENANCE_TRAILER = "\n\nGenerated-By: autonomous_researcher.py (model-generated; human review required)"
 
-    def __init__(self, eval_command: str, cwd: Path):
+
+def _validate_scope(scope: tuple) -> tuple:
+    """Daemon-owned paths must be relative and stay inside the repository."""
+    clean = []
+    for entry in scope:
+        p = Path(entry)
+        if p.is_absolute() or ".." in p.parts or str(p) in ("", "."):
+            raise ValueError(f"Unsafe scope path rejected: {entry!r}")
+        clean.append(str(p))
+    return tuple(clean)
+
+
+class RatchetEvaluator:
+    """Executes immutable validation test suites. Enforces the strict progress gate.
+
+    Git side effects are confined to `scope` (daemon-owned paths) and pushes are
+    allowed only from branches starting with `push_prefix`; the evaluator never
+    touches the rest of the working tree and never force-pushes.
+    """
+
+    def __init__(self, eval_command: str, cwd: Path, scope: tuple = DEFAULT_SCOPE, push_prefix: str = DEFAULT_PUSH_PREFIX):
         self.eval_command = eval_command
         self.cwd = Path(cwd)
+        self.scope = _validate_scope(tuple(scope))
+        self.push_prefix = push_prefix
 
     def evaluate(self) -> EvalResult:
         """Runs the immutable evaluator command."""
@@ -201,22 +224,38 @@ class RatchetEvaluator:
             return EvalResult(passed=False, score=0.0, output="", error=str(e))
 
     def rollback(self) -> None:
-        """Hard rollback: reverts working directory to last clean commit."""
-        subprocess.run(["git", "checkout", "."], cwd=self.cwd, check=False)
-        subprocess.run(["git", "clean", "-fd"], cwd=self.cwd, check=False)
+        """Scoped rollback: reverts only daemon-owned paths, never the whole tree."""
+        for path in self.scope:
+            subprocess.run(["git", "checkout", "--", path], cwd=self.cwd, capture_output=True, check=False)
+            subprocess.run(["git", "clean", "-fd", "--", path], cwd=self.cwd, capture_output=True, check=False)
+
+    def current_branch(self) -> str:
+        proc = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"], cwd=self.cwd, capture_output=True, text=True)
+        return proc.stdout.strip() if proc.returncode == 0 else ""
 
     def commit(self, message: str, auto_push: bool = False) -> bool:
-        """Ratchet advancement: commits working tree changes and optionally pushes to origin."""
-        add_proc = subprocess.run(["git", "add", "."], cwd=self.cwd, capture_output=True)
+        """Ratchet advancement: commits only scoped changes; pushes only if opted in and branch-allowed."""
+        add_proc = subprocess.run(["git", "add", "--", *self.scope], cwd=self.cwd, capture_output=True)
         if add_proc.returncode != 0:
             return False
-        commit_proc = subprocess.run(["git", "commit", "-m", message], cwd=self.cwd, capture_output=True)
+        commit_proc = subprocess.run(
+            ["git", "commit", "-m", message + PROVENANCE_TRAILER, "--", *self.scope],
+            cwd=self.cwd,
+            capture_output=True,
+        )
         if commit_proc.returncode != 0:
             return False
         if auto_push:
-            push_proc = subprocess.run(["git", "push", "origin", "HEAD"], cwd=self.cwd, capture_output=True, text=True)
+            branch = self.current_branch()
+            if not branch or not branch.startswith(self.push_prefix):
+                print(f"[!] Auto-push skipped: branch {branch!r} does not start with {self.push_prefix!r}.")
+                return True
+            push_proc = subprocess.run(
+                ["git", "push", "origin", f"HEAD:refs/heads/{branch}"],
+                cwd=self.cwd, capture_output=True, text=True,
+            )
             if push_proc.returncode == 0:
-                print("[*] Automatically pushed verified commit to origin.")
+                print(f"[*] Pushed verified commit to origin/{branch}.")
             else:
                 print(f"[!] Git push warning: {push_proc.stderr.strip()}")
         return True
@@ -225,15 +264,37 @@ class RatchetEvaluator:
 # 4. Orchestrator Runner
 # ---------------------------------------------------------------------------
 
+DEFAULT_GATE_FILE = Path("05_DISCOVERY_LAB/00_GOVERNANCE/DAEMON_GATE.yaml")
+
+
+def load_gate(path: Path) -> Dict[str, str]:
+    """Reads per-topic `topic: open|rested` lines. Fail-closed: a missing file rests every topic."""
+    gate: Dict[str, str] = {}
+    try:
+        text = Path(path).read_text(encoding="utf-8")
+    except OSError:
+        print(f"[!] Gate file not found ({path}): failing closed, all topics rested.")
+        return gate
+    for line in text.splitlines():
+        m = re.match(r"^\s*([A-Za-z0-9_\-]+)\s*:\s*(open|rested)\b", line)
+        if m:
+            gate[m.group(1)] = m.group(2)
+    return gate
+
+
 def run_single_iteration(
     memory: AgentMemory,
     evaluator: RatchetEvaluator,
     llm: Optional[LocalLLMClient],
     topic: str,
     dry_run: bool = False,
+    gate: Optional[Dict[str, str]] = None,
 ) -> bool:
     """Executes one atomic Karpathy-Tan iteration."""
     print(f"[*] Booting cycle for topic: {topic}")
+    if gate is not None and gate.get(topic, "rested") != "open":
+        print(f"[*] NON-DISPATCH: topic {topic!r} is not 'open' in the gate file; no cycle, no memory write.")
+        return False
     summary = memory.read_summary()
     print(f"[*] Memory state loaded ({len(summary.splitlines())} lines)")
 
@@ -263,7 +324,10 @@ def main() -> None:
     parser.add_argument("--test-cmd", type=str, default="python3 -m pytest tamesis-cycle-survival/tests/ -q")
     parser.add_argument("--topic", type=str, default="u12_universality", help="Single topic or primary topic")
     parser.add_argument("--topics", type=str, default="u12_universality,riemann_asymptotics,openai_math_benchmarks", help="Comma-separated topics for round-robin rotation")
-    parser.add_argument("--auto-push", action="store_true", default=True, help="Automatically push verified commits to origin")
+    parser.add_argument("--auto-push", action="store_true", default=False, help="Push verified commits to origin (off by default; only from branches matching --push-prefix)")
+    parser.add_argument("--push-prefix", type=str, default=DEFAULT_PUSH_PREFIX, help="Only branches starting with this prefix may be auto-pushed")
+    parser.add_argument("--scope", type=str, default=",".join(DEFAULT_SCOPE), help="Comma-separated daemon-owned paths for add/commit/rollback")
+    parser.add_argument("--gate-file", type=Path, default=DEFAULT_GATE_FILE, help="Per-topic open/rested gate (fail-closed)")
     parser.add_argument("--single-cycle", action="store_true", help="Run a single cycle then exit")
     parser.add_argument("--interval", type=int, default=60, help="Seconds between cycles in continuous mode")
     parser.add_argument("--dream-every", type=int, default=5, help="Cycles between dreaming consolidations")
@@ -273,7 +337,8 @@ def main() -> None:
     args = parser.parse_args()
     memory = AgentMemory(args.memory_dir)
     llm = LocalLLMClient(endpoint_url=args.endpoint, model_name=args.model)
-    evaluator = RatchetEvaluator(eval_command=args.test_cmd, cwd=Path.cwd())
+    scope = tuple(p.strip() for p in args.scope.split(",") if p.strip())
+    evaluator = RatchetEvaluator(eval_command=args.test_cmd, cwd=Path.cwd(), scope=scope, push_prefix=args.push_prefix)
 
     if args.dream_only:
         print("[*] Executing Dreaming consolidation...")
@@ -292,6 +357,7 @@ def main() -> None:
             llm=llm if llm_online else None,
             topic=args.topic,
             dry_run=args.dry_run,
+            gate=load_gate(args.gate_file),
         )
         if success:
             print("[+] Single cycle settled successfully.")
@@ -318,6 +384,7 @@ def main() -> None:
                 llm=llm if llm_online else None,
                 topic=current_topic,
                 dry_run=args.dry_run,
+                gate=load_gate(args.gate_file),
             )
             if cycle_num % args.dream_every == 0:
                 print("[*] Triggering periodic Dreaming consolidation...")

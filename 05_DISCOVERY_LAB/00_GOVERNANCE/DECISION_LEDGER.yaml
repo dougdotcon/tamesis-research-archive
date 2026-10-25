@@ -10006,3 +10006,67 @@ decisions:
       (H-ces), C(gamma) permanecem exatamente como registrados --
       formalmente ABERTOS -- ate que uma frente genuinamente nova seja
       identificada e autorizada com a mesma disciplina.
+
+  - id: DISC-DEC-154
+    date: 2026-10-25
+    decision: >
+      Reconciliacao de governanca, SEM onda de matematica. (1) REGISTRO
+      DE MUDANCAS EXTERNAS (feitas pelo autor humano em 2026-10-12, fora
+      desta sessao, ja no HEAD 905f2e44; apenas registradas aqui, nenhum
+      conteudo reescrito): MODEL_ALLOCATION_MATRIX.md,
+      AUTONOMOUS_RESEARCH_LOOPS.md, DIAGNOSTICO_AUTOMACAO_LINHAS_PESQUISA.md,
+      06_DISCOVERY_ENGINE/scripts/autonomous_researcher.py, agent_memory/,
+      e a avaliacao externa 04_FORMAL_RESEARCH_LAB/08_REVIEWS/external/
+      AVALIACAO_OPENAI_MATH_719_MANUSCRITOS.md com 4 linhas
+      CLAIM_UNDER_AUDIT em KNOWN_RESULTS_MATRIX (Quasi-RH, Navier-Stokes,
+      Hodge-CM, BSD coranque baixo). Status epistemico: TODAS as
+      alegacoes do corpus openai/math permanecem NAO verificadas por esta
+      sessao e NAO aceitas; o mapeamento do corpus para a Linha D
+      (Thorp/Mezard-Parisi vs. crossover de C(gamma)) e analogia
+      especulativa, sem prova de aplicabilidade. O diagrama da avaliacao
+      afirma o caso Hodge-CM como "fecha"; a tabela do mesmo documento o
+      marca corretamente como sob auditoria -- vale a tabela. (2)
+      HIGIENE DO DAEMON autonomous_researcher.py: (a) auto-push passa a
+      DESLIGADO por padrao (a flag anterior era store_true com
+      default=True, logo impossivel de desligar) e so empurra de ramos
+      cujo nome comece com --push-prefix (padrao "research/"), sempre
+      como HEAD:refs/heads/<ramo>, nunca force; (b) rollback, add e
+      commit ficam restritos a --scope (padrao agent_memory,
+      research/auto_runs), com caminhos absolutos, ".." e "." rejeitados;
+      o antigo "git checkout ." + "git clean -fd" sobre a arvore inteira
+      foi removido; (c) todo commit do daemon recebe o trailer
+      "Generated-By: autonomous_researcher.py (model-generated; human
+      review required)" para separar autoria humana e de modelo; (d) novo
+      gate DAEMON_GATE.yaml, fail-closed (topico ausente ou arquivo
+      ausente = rested = NAO-DESPACHO, sem escrita em memoria), relido a
+      cada ciclo; u12_universality marcado rested por DISC-DEC-153, os
+      outros dois topicos mantidos open exatamente como estavam. Testado
+      em repositorio descartavel: rollback fora de escopo preservado,
+      validacao de escopo, trailer, bloqueio de push em ramo 'main',
+      gate (rested/desconhecido/ausente/open). (3) PENDENCIAS NAO
+      RESOLVIDAS, de decisao humana: o ramo origin/research/auto
+      (78546805; ciclos 2026-10-20/21/22 da Linha D) NAO foi mesclado
+      nem editado; seus tres ciclos sao checagens exploratorias de
+      sanidade de A_m(gamma) (fora de escopo de onda, sem impacto em
+      claims, como os proprios resumos declaram). O ciclo de 2026-10-22
+      registra TESTE_FALHOU por tolerancia absoluta 1e-12 em
+      test_zero_locus_and_monotonicity (|A_181|=1.8e-12), o que
+      aparenta ser cancelamento de ponto flutuante e nao erro
+      matematico -- leitura do log, NAO reproduzida aqui; recomenda-se
+      tolerancia relativa naquele test_step.py. O ciclo de 2026-10-20
+      ja possui CORRECAO.md (falha de infraestrutura). agent_memory/
+      MEMORY.md indexa riemann_asymptotics, adversarial_barriers e
+      openai_math_benchmarks sem verificacao de existencia dos arquivos,
+      e u12_universality.md tem linha duplicada (o dreaming
+      deduplica).
+    scope: >
+      Arquivos afetados: 06_DISCOVERY_ENGINE/scripts/autonomous_researcher.py
+      (higiene); 05_DISCOVERY_LAB/00_GOVERNANCE/DAEMON_GATE.yaml (novo);
+      DECISION_LEDGER.yaml (este arquivo); DISCOVERY_LAB_STATE.md.
+      Nenhuma edicao de conteudo matematico. Nenhuma execucao do daemon
+      contra o repositorio real; testes apenas em repositorio descartavel.
+    untouched_safeguards: >
+      Nenhuma reivindicacao de Problema do Milenio. DISC-DEC-153
+      (nao-despacho da onda 35) mantido. H1, (U1), (U2), (C'), (U), (B),
+      (H-ces), C(gamma) permanecem exatamente como registrados --
+      formalmente ABERTOS. Documentos de 2026-10-12 nao reescritos.
