@@ -1,0 +1,65 @@
+5784/30203 = 0.19150415521636924 | log10(aB/aA) = 0.7981799922726323 | 2log10F = 0.4367485525042455 | w_max p/ L4 = 0.36143143976838676
+cfg 0 H0_homog_f0.10_a0A {'ND[VIES]': 9, 'ND[GATE]': 1}
+cfg 1 H1_hetero_a0A {'ND[LARG]': 8, 'ND[GATE]': 1, 'ND[VIES]': 1}
+cfg 2 H1_hetero_newtonian {'ND[GATE]': 2, 'ND[G1]': 7, 'ND[LARG]': 1}
+cfg 3 H1a_hetero_artifact0.3kms_a0A {'ND[GATE]': 10}
+cfg 4 H1a_hetero_artifact0.1kms_a0A {'ND[GATE]': 5, 'ND[LARG]': 4, 'ND[VIES]': 1}
+cfg 5 H1_hetero_a0A_N12944 {'ND[LARG]': 9, 'ND[GATE]': 1}
+cfg 6 H1_hetero_a0A_N6000 {'ND[LARG]': 8, 'ND[GATE]': 2}
+cfg 7 H1_hetero_a0A_N3000 {'ND[LARG]': 3, 'ND[CI]': 6, 'ND[GATE]': 1}
+cfg 8 H0_homog_f0.10_a0A_N12944 {'ND[LARG]': 7, 'ND[GATE]': 3}
+cfg 9 H1_hetero_a0B {'ND[VIES]': 5, 'B_ONLY': 5}
+cfg 10 H2inc_composition_rises_with_gN_a0A {'ND[VIES]': 8, 'ND[GATE]': 2}
+cfg 11 H2dec_composition_falls_with_gN_a0A {'ND[CI]': 4, 'ND[GATE]': 4, 'ND[LARG]': 2}
+cfg 12 Hclean_f0_a0A {'ND[VIES]': 6, 'ND[GATE]': 1, 'ND[G2]': 3}
+cfg 13 H1a_hetero_artifact0.3kms_a0A_N12944 {'ND[GATE]': 9, 'ND[LARG]': 1}
+TOTAL regra completa (140 reps): {'ND[VIES]': 30, 'ND[GATE]': 42, 'ND[LARG]': 43, 'ND[G1]': 7, 'ND[CI]': 10, 'B_ONLY': 5, 'ND[G2]': 3}
+
+== A_ONLY alcancavel? (H_A verdadeiro): lo<=a0_A e largura<0.361 dex
+cfg 0: lo<=aA 0/10 | largura<0.363 10/10 | ambos 0/10 | vies medio +0.209 | largura media 0.33
+cfg 1: lo<=aA 5/10 | largura<0.363 1/10 | ambos 0/10 | vies medio +0.204 | largura media 0.40
+cfg 3: lo<=aA 0/10 | largura<0.363 0/10 | ambos 0/10 | vies medio +0.409 | largura media 0.41
+cfg 4: lo<=aA 2/10 | largura<0.363 2/10 | ambos 0/10 | vies medio +0.272 | largura media 0.38
+cfg 5: lo<=aA 8/10 | largura<0.363 0/10 | ambos 0/10 | vies medio +0.206 | largura media 0.62
+cfg 6: lo<=aA 9/10 | largura<0.363 0/10 | ambos 0/10 | vies medio +0.253 | largura media 1.02
+cfg 7: lo<=aA 10/10 | largura<0.363 0/10 | ambos 0/10 | vies medio +0.287 | largura media 2.10
+cfg 8: lo<=aA 8/10 | largura<0.363 0/10 | ambos 0/10 | vies medio +0.209 | largura media 0.52
+cfg10: lo<=aA 0/10 | largura<0.363 10/10 | ambos 0/10 | vies medio +0.229 | largura media 0.29
+cfg11: lo<=aA 10/10 | largura<0.363 0/10 | ambos 0/10 | vies medio +0.195 | largura media 2.56
+cfg12: lo<=aA 0/10 | largura<0.363 10/10 | ambos 0/10 | vies medio +0.206 | largura media 0.23
+cfg13: lo<=aA 3/10 | largura<0.363 0/10 | ambos 0/10 | vies medio +0.386 | largura media 0.66
+vies maximo tolerado para A_ONLY ser alcancavel com F=10^b: b < LOGAB/4 = 0.1995 dex; F^: log10F=0.2184; vies medio observado cfg0,1,12 ~ +0.21
+
+BOTH_FALSIFIED na regra completa em qualquer cfg: 0 | A_ONLY: 0 | B_ONLY: 5
+sem L4: {'ND[VIES]': 52, 'ND[GATE]': 42, 'A_ONLY': 20, 'ND[G1]': 7, 'BOTH_FALSIFIED': 1, 'ND[CI]': 10, 'B_ONLY': 5, 'ND[G2]': 3}
+
+== Limiares in-sample vs leave-one-config-out (nulos 0,1,12)
+limiares in-sample (T,zmax,chi2): [2.45160924 1.11190283 5.20367912] vs json [2.451609242844633, 1.1119028273202634, 5.203679119246238]
+fracao de nulos que dispara QUALQUER gate in-sample: 0.1
+ holdout cfg0: limiares de 20 reps [2.66 1.07 5.72] -> taxa de gate-any em cfg0: 0.20
+ holdout cfg1: limiares de 20 reps [2.68 1.16 3.43] -> taxa de gate-any em cfg1: 0.20
+ holdout cfg12: limiares de 20 reps [2.13 1.1  4.67] -> taxa de gate-any em cfg12: 0.20
+FP any-gate in-sample 3/30; Wilson [0.03,0.26]
+IC90 bootstrap do limiar (T,zmax,chi2): lo [1.89 0.93 2.73] hi [6.79 1.85 6.43]
+
+vies mediano cond por cfg 0,1,12: [0.2184 0.2154 0.2124] -> max= 0.21837427625212275 10^max = 1.6533860773642806
+vies individual: max 0.2709598466896948 frac reps com vies> log10F: 0.43333333333333335
+
+== Estagio 2 (stage2_scalar) por cfg (JSON oc):
+0 H0_homog_f0.10_a0A {'NAO_DISTINGUE_VIES': 10}
+1 H1_hetero_a0A {'NAO_DISTINGUE_VIES': 10}
+2 H1_hetero_newtonian {'BOTH_FALSIFIED': 10}
+3 H1a_hetero_artifact0.3kms_a0A {'BOTH_FALSIFIED': 10}
+4 H1a_hetero_artifact0.1kms_a0A {'NAO_DISTINGUE_VIES': 7, 'BOTH_FALSIFIED': 3}
+5 H1_hetero_a0A_N12944 {'A_ONLY': 2, 'NAO_DISTINGUE_VIES': 8}
+6 H1_hetero_a0A_N6000 {'NAO_DISTINGUE_VIES': 7, 'A_ONLY': 2, 'BOTH_FALSIFIED': 1}
+7 H1_hetero_a0A_N3000 {'A_ONLY': 4, 'NAO_DISTINGUE_VIES': 4, 'BOTH_FALSIFIED': 2}
+8 H0_homog_f0.10_a0A_N12944 {'A_ONLY': 2, 'NAO_DISTINGUE_VIES': 8}
+9 H1_hetero_a0B {'NAO_DISTINGUE_VIES': 10}
+10 H2inc_composition_rises_with_gN_a0A {'BOTH_FALSIFIED': 10}
+11 H2dec_composition_falls_with_gN_a0A {'BOTH_FALSIFIED': 10}
+12 Hclean_f0_a0A {'NAO_DISTINGUE_VIES': 10}
+13 H1a_hetero_artifact0.3kms_a0A_N12944 {'BOTH_FALSIFIED': 7, 'NAO_DISTINGUE_VIES': 3}
+
+cfg9 vies cond: [0.18  0.139 0.122 0.124 0.168 0.145 0.171 0.191 0.193 0.19 ]
+cfg9 CI recal (lo,hi)/aB: [(1.08, 2.02), (0.93, 1.87), (0.97, 1.71), (0.98, 1.83), (1.01, 1.98), (1.0, 1.97), (0.97, 1.99), (1.14, 1.94), (1.16, 2.05), (1.1, 1.98)]

@@ -1,0 +1,36 @@
+cfg0 rep0: 134 campos comparados; 0 com diferenca != 0; max rel diff = 0.000e+00 em /config_id
+   scalar/a0                    registrado 1.759002170468684e-10    reproduzido 1.759002170468684e-10
+   cond_joint/a0                registrado 1.7850581103604303e-10   reproduzido 1.7850581103604303e-10
+   cond_joint/recal/ci_lo       registrado 1.2517836022735978e-10   reproduzido 1.2517836022735978e-10
+   cond_joint/recal/ci_hi       registrado 2.548907348694368e-10    reproduzido 2.548907348694368e-10
+   cond_joint/recal/T_univ      registrado 1.9655954094643422       reproduzido 1.9655954094643422
+   cond_joint/recal/gof_chi2    registrado 2.474005066583865        reproduzido 2.474005066583865
+   cond_strata/0/f_hat          registrado 0.08853671962172562      reproduzido 0.08853671962172562
+   cond_strata/1/f_hat          registrado 0.0678923940887269       reproduzido 0.0678923940887269
+cfg10 rep0: 134 campos comparados; 0 com diferenca != 0; max rel diff = 0.000e+00 em /config_id
+   scalar/a0                    registrado 5.671273934737432e-11    reproduzido 5.671273934737432e-11
+   cond_joint/a0                registrado 1.869888129837024e-10    reproduzido 1.869888129837024e-10
+   cond_joint/recal/ci_lo       registrado 1.250015425551432e-10    reproduzido 1.250015425551432e-10
+   cond_joint/recal/ci_hi       registrado 2.371972687900211e-10    reproduzido 2.371972687900211e-10
+   cond_joint/recal/T_univ      registrado 0.27415066006650235      reproduzido 0.27415066006650235
+   cond_joint/recal/gof_chi2    registrado 0.792876063557656        reproduzido 0.792876063557656
+   cond_strata/0/f_hat          registrado 0.01884943199679842      reproduzido 0.01884943199679842
+   cond_strata/1/f_hat          registrado 0.4307522437884321       reproduzido 0.4307522437884321
+cfg11 rep0: 134 campos comparados; 0 com diferenca != 0; max rel diff = 0.000e+00 em /config_id
+   scalar/a0                    registrado 3.9220380439032063e-10   reproduzido 3.9220380439032063e-10
+   cond_joint/a0                registrado 1.5253271841555806e-10   reproduzido 1.5253271841555806e-10
+   cond_joint/recal/ci_lo       registrado 2.988405590439232e-13    reproduzido 2.988405590439232e-13
+   cond_joint/recal/ci_hi       registrado 6.818738558088324e-10    reproduzido 6.818738558088324e-10
+   cond_joint/recal/T_univ      registrado 0.015852602084917206     reproduzido 0.015852602084917206
+   cond_joint/recal/gof_chi2    registrado 0.8958860467862548       reproduzido 0.8958860467862548
+   cond_strata/0/f_hat          registrado 0.025238589319803006     reproduzido 0.025238589319803006
+   cond_strata/1/f_hat          registrado 0.43374064058567163      reproduzido 0.43374064058567163
+cfg12 rep3: 134 campos comparados; 0 com diferenca != 0; max rel diff = 0.000e+00 em /config_id
+   scalar/a0                    registrado 1.8087381403012383e-10   reproduzido 1.8087381403012383e-10
+   cond_joint/a0                registrado 1.7641822212424937e-10   reproduzido 1.7641822212424937e-10
+   cond_joint/recal/ci_lo       registrado 1.2559369005682943e-10   reproduzido 1.2559369005682943e-10
+   cond_joint/recal/ci_hi       registrado 2.076331222576965e-10    reproduzido 2.076331222576965e-10
+   cond_joint/recal/T_univ      registrado 2.4427673802509977       reproduzido 2.4427673802509977
+   cond_joint/recal/gof_chi2    registrado 3.2722192461935093       reproduzido 3.2722192461935093
+   cond_strata/0/f_hat          registrado 0.0                      reproduzido 0.0
+   cond_strata/1/f_hat          registrado 0.02118163676598786      reproduzido 0.02118163676598786

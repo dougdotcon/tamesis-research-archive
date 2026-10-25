@@ -1,6 +1,7 @@
 # Estado da Trilha de Descoberta Computacional
 
-**Última atualização:** 2026-10-25 (`DISC-DEC-154`: reconciliação de
+**Última atualização:** 2026-10-25 (`DISC-DEC-156`: frente Linha G integrada. Rascunho `SPARC-FMULTI-STAGE3` (`f_multi` condicional a RUWE, só sintético, `DISC-DEC-155`) revisado por referee hostil: a regra de decisão é algebricamente incapaz de emitir `A_ONLY`/`BOTH_FALSIFIED` (viés ~+0,21 dex vs limite 0,363 dex) e o texto tinha brechas sobre o holdout; permanece `DRAFT`, NÃO candidato a LOCK. Causa do viés do estimador desconhecida; premissa de `DISC-CLAIM-008` não decorre sozinha do achado RUWE (registro inalterado). Holdout intocado, nenhum dado real. Decisões humanas: J1-J19, investigar o viés, qualquer LOCK. Nenhuma onda adicional autorizada.)
+Anterior: `DISC-DEC-155`/`154` (2026-10-25): autorização draft-only da Linha G; higiene do daemon e reconciliação de 2026-10-12. Antes: (`DISC-DEC-154`: reconciliação de
 governança, SEM onda de matemática. Registra as mudanças externas de
 2026-10-12 feitas pelo autor humano fora da sessão (matriz de alocação de
 modelos, loops autônomos, diagnóstico das 16 linhas, daemon

@@ -1,0 +1,15 @@
+cfg 0 a0_true=A H0_homog_f0.10_a0A                         {'A_ONLY': 9, 'ND[GATE]': 1}
+cfg 1 a0_true=A H1_hetero_a0A                              {'A_ONLY': 9, 'ND[GATE]': 1}
+cfg 2 a0_true=Newt H1_hetero_newtonian                        {'ND[GATE]': 2, 'ND[G1]': 7, 'BOTH_FALSIFIED': 1}
+cfg 3 a0_true=A H1a_hetero_artifact0.3kms_a0A              {'ND[GATE]': 10}
+cfg 4 a0_true=A H1a_hetero_artifact0.1kms_a0A              {'ND[GATE]': 5, 'A_ONLY': 5}
+cfg 5 a0_true=A H1_hetero_a0A_N12944                       {'A_ONLY': 9, 'ND[GATE]': 1}
+cfg 6 a0_true=A H1_hetero_a0A_N6000                        {'A_ONLY': 8, 'ND[GATE]': 2}
+cfg 7 a0_true=A H1_hetero_a0A_N3000                        {'A_ONLY': 9, 'ND[GATE]': 1}
+cfg 8 a0_true=A H0_homog_f0.10_a0A_N12944                  {'A_ONLY': 7, 'ND[GATE]': 3}
+cfg 9 a0_true=B H1_hetero_a0B                              {'B_ONLY': 10}
+cfg10 a0_true=A H2inc_composition_rises_with_gN_a0A        {'A_ONLY': 8, 'ND[GATE]': 2}
+cfg11 a0_true=A H2dec_composition_falls_with_gN_a0A        {'A_ONLY': 6, 'ND[GATE]': 4}
+cfg12 a0_true=A Hclean_f0_a0A                              {'A_ONLY': 6, 'ND[GATE]': 1, 'ND[G2]': 3}
+cfg13 a0_true=A H1a_hetero_artifact0.3kms_a0A_N12944       {'ND[GATE]': 9, 'A_ONLY': 1}
+TOTAL {'A_ONLY': 77, 'ND[GATE]': 42, 'ND[G1]': 7, 'BOTH_FALSIFIED': 1, 'B_ONLY': 10, 'ND[G2]': 3}

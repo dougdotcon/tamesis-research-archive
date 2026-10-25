@@ -1,0 +1,586 @@
+analyze_synthetic_identifiability.py -- tabelas derivadas (somente leitura de synthetic_identifiability.json)
+json: /home/user/TamesisTheoryCompleteResearchArchive/05_DISCOVERY_LAB/02_TESTS/COSMOLOGY_WIDE_BINARIES_MC_DEPROJECTION/fmulti_selfcal_stage1/stage3_ruwe_conditional/synthetic_identifiability.json
+configs presentes: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13']; reps por config: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+
+=== T1. Vies de log10(a0_fit/a0_true) por metodo (dex): media +-sd (mediana, n) ===
+cfg 0 H0_homog_f0.10_a0A                       N=30203 | escalar +0.213 +-0.028 (med +0.218, n=10) | cond-conjunto +0.209 +-0.028 (med +0.218, n=10) | corte-baixo +0.211 +-0.041 (med +0.215, n=10)
+cfg 1 H1_hetero_a0A                            N=30203 | escalar +0.216 +-0.055 (med +0.233, n=10) | cond-conjunto +0.204 +-0.061 (med +0.215, n=10) | corte-baixo +0.217 +-0.058 (med +0.242, n=10)
+cfg 3 H1a_hetero_artifact0.3kms_a0A            N=30203 | escalar +0.350 +-0.032 (med +0.357, n=10) | cond-conjunto +0.409 +-0.040 (med +0.416, n=10) | corte-baixo +0.201 +-0.031 (med +0.212, n=10)
+cfg 4 H1a_hetero_artifact0.1kms_a0A            N=30203 | escalar +0.249 +-0.043 (med +0.244, n=10) | cond-conjunto +0.272 +-0.055 (med +0.270, n=10) | corte-baixo +0.216 +-0.046 (med +0.202, n=10)
+cfg 5 H1_hetero_a0A_N12944                     N=12944 | escalar +0.217 +-0.074 (med +0.235, n=10) | cond-conjunto +0.206 +-0.080 (med +0.230, n=10) | corte-baixo +0.200 +-0.051 (med +0.202, n=10)
+cfg 6 H1_hetero_a0A_N6000                      N= 6000 | escalar +0.269 +-0.092 (med +0.255, n=10) | cond-conjunto +0.253 +-0.082 (med +0.258, n=10) | corte-baixo +0.254 +-0.046 (med +0.256, n=10)
+cfg 7 H1_hetero_a0A_N3000                      N= 3000 | escalar +0.306 +-0.155 (med +0.328, n=10) | cond-conjunto +0.287 +-0.143 (med +0.335, n=10) | corte-baixo +0.253 +-0.093 (med +0.246, n=10)
+cfg 8 H0_homog_f0.10_a0A_N12944                N=12944 | escalar +0.211 +-0.066 (med +0.216, n=10) | cond-conjunto +0.209 +-0.069 (med +0.207, n=10) | corte-baixo +0.216 +-0.080 (med +0.212, n=10)
+cfg 9 H1_hetero_a0B                            N=30203 | escalar +0.175 +-0.027 (med +0.184, n=10) | cond-conjunto +0.162 +-0.028 (med +0.169, n=10) | corte-baixo +0.176 +-0.030 (med +0.183, n=10)
+cfg10 H2inc_composition_rises_with_gN_a0A      N=30203 | escalar -0.252 +-0.029 (med -0.258, n=10) | cond-conjunto +0.229 +-0.024 (med +0.236, n=10) | corte-baixo +0.227 +-0.026 (med +0.236, n=10)
+cfg11 H2dec_composition_falls_with_gN_a0A      N=30203 | escalar +0.595 +-0.027 (med +0.589, n=10) | cond-conjunto +0.195 +-0.108 (med +0.159, n=10) | corte-baixo +0.230 +-0.052 (med +0.222, n=10)
+cfg12 Hclean_f0_a0A                            N=30203 | escalar +0.212 +-0.035 (med +0.219, n=10) | cond-conjunto +0.206 +-0.036 (med +0.212, n=10) | corte-baixo +0.215 +-0.038 (med +0.228, n=10)
+cfg13 H1a_hetero_artifact0.3kms_a0A_N12944     N=12944 | escalar +0.351 +-0.058 (med +0.342, n=10) | cond-conjunto +0.386 +-0.080 (med +0.386, n=10) | corte-baixo +0.205 +-0.062 (med +0.195, n=10)
+
+=== T2. Largura do IC95% (log10 hi/lo) e cobertura do a0 verdadeiro ===
+cfg 0 H0_homog_f0.10_a0A                       | largura(dex) escalar 0.18 cond-recal 0.33 cond-fixo 0.18 corte-baixo 0.19 | cobertura escalar 0/10 cond-recal 0/10 cond-fixo 0/10 corte-baixo 0/10
+cfg 1 H1_hetero_a0A                            | largura(dex) escalar 0.18 cond-recal 0.40 cond-fixo 0.20 corte-baixo 0.19 | cobertura escalar 0/10 cond-recal 5/10 cond-fixo 2/10 corte-baixo 0/10
+cfg 2 H1_hetero_newtonian                      | largura(dex) escalar 2.72 cond-recal 2.92 cond-fixo 2.77 corte-baixo 2.78 | cobertura escalar n/a cond-recal n/a cond-fixo n/a corte-baixo n/a
+cfg 3 H1a_hetero_artifact0.3kms_a0A            | largura(dex) escalar 0.16 cond-recal 0.41 cond-fixo 0.18 corte-baixo 0.19 | cobertura escalar 0/10 cond-recal 0/10 cond-fixo 0/10 corte-baixo 0/10
+cfg 4 H1a_hetero_artifact0.1kms_a0A            | largura(dex) escalar 0.17 cond-recal 0.38 cond-fixo 0.19 corte-baixo 0.19 | cobertura escalar 0/10 cond-recal 2/10 cond-fixo 0/10 corte-baixo 0/10
+cfg 5 H1_hetero_a0A_N12944                     | largura(dex) escalar 0.27 cond-recal 0.62 cond-fixo 0.31 corte-baixo 0.29 | cobertura escalar 2/10 cond-recal 8/10 cond-fixo 3/10 corte-baixo 1/10
+cfg 6 H1_hetero_a0A_N6000                      | largura(dex) escalar 0.39 cond-recal 1.02 cond-fixo 0.45 corte-baixo 0.41 | cobertura escalar 2/10 cond-recal 9/10 cond-fixo 5/10 corte-baixo 4/10
+cfg 7 H1_hetero_a0A_N3000                      | largura(dex) escalar 0.56 cond-recal 2.10 cond-fixo 0.65 corte-baixo 0.58 | cobertura escalar 4/10 cond-recal 10/10 cond-fixo 5/10 corte-baixo 7/10
+cfg 8 H0_homog_f0.10_a0A_N12944                | largura(dex) escalar 0.27 cond-recal 0.52 cond-fixo 0.28 corte-baixo 0.29 | cobertura escalar 2/10 cond-recal 8/10 cond-fixo 2/10 corte-baixo 2/10
+cfg 9 H1_hetero_a0B                            | largura(dex) escalar 0.11 cond-recal 0.27 cond-fixo 0.12 corte-baixo 0.11 | cobertura escalar 0/10 cond-recal 5/10 cond-fixo 0/10 corte-baixo 0/10
+cfg10 H2inc_composition_rises_with_gN_a0A      | largura(dex) escalar 0.27 cond-recal 0.29 cond-fixo 0.17 corte-baixo 0.17 | cobertura escalar 0/10 cond-recal 0/10 cond-fixo 0/10 corte-baixo 0/10
+cfg11 H2dec_composition_falls_with_gN_a0A      | largura(dex) escalar 0.14 cond-recal 2.56 cond-fixo 0.24 corte-baixo 0.22 | cobertura escalar 0/10 cond-recal 10/10 cond-fixo 4/10 corte-baixo 0/10
+cfg12 Hclean_f0_a0A                            | largura(dex) escalar 0.16 cond-recal 0.23 cond-fixo 0.17 corte-baixo 0.18 | cobertura escalar 0/10 cond-recal 0/10 cond-fixo 0/10 corte-baixo 0/10
+cfg13 H1a_hetero_artifact0.3kms_a0A_N12944     | largura(dex) escalar 0.25 cond-recal 0.66 cond-fixo 0.30 corte-baixo 0.29 | cobertura escalar 0/10 cond-recal 3/10 cond-fixo 0/10 corte-baixo 1/10
+
+=== T3. Deteccao de heterogeneidade (D do escalar; Delta-f do condicional) e f_hat por estrato ===
+cfg 0 H0_homog_f0.10_a0A                       N=30203 f_true=(0.1,0.1) | n_ancora(baixo,alto)=(4894,1146) | f_hat baixo 0.088+-0.011 alto 0.091+-0.026 | frac. f_baixo na borda 0: 0.00 | D +0.001 deteccao D 0/10, deteccao Delta-f 0/10
+cfg 1 H1_hetero_a0A                            N=30203 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(4900,1140) | f_hat baixo 0.016+-0.015 alto 0.436+-0.026 | frac. f_baixo na borda 0: 0.10 | D +0.276 deteccao D 10/10, deteccao Delta-f 10/10
+cfg 2 H1_hetero_newtonian                      N=30203 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(4874,1166) | f_hat baixo 0.022+-0.013 alto 0.430+-0.019 | frac. f_baixo na borda 0: 0.10 | D +0.269 deteccao D 10/10, deteccao Delta-f 10/10
+cfg 3 H1a_hetero_artifact0.3kms_a0A            N=30203 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(4881,1159) | f_hat baixo 0.019+-0.011 alto 0.498+-0.026 | frac. f_baixo na borda 0: 0.00 | D +0.327 deteccao D 10/10, deteccao Delta-f 10/10
+cfg 4 H1a_hetero_artifact0.1kms_a0A            N=30203 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(4874,1166) | f_hat baixo 0.016+-0.012 alto 0.429+-0.026 | frac. f_baixo na borda 0: 0.00 | D +0.270 deteccao D 10/10, deteccao Delta-f 10/10
+cfg 5 H1_hetero_a0A_N12944                     N=12944 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(2101,487) | f_hat baixo 0.017+-0.016 alto 0.429+-0.029 | frac. f_baixo na borda 0: 0.10 | D +0.265 deteccao D 10/10, deteccao Delta-f 10/10
+cfg 6 H1_hetero_a0A_N6000                      N= 6000 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(971,229) | f_hat baixo 0.016+-0.014 alto 0.407+-0.056 | frac. f_baixo na borda 0: 0.20 | D +0.256 deteccao D 10/10, deteccao Delta-f 10/10
+cfg 7 H1_hetero_a0A_N3000                      N= 3000 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(482,118) | f_hat baixo 0.013+-0.020 alto 0.399+-0.066 | frac. f_baixo na borda 0: 0.60 | D +0.261 deteccao D 8/10, deteccao Delta-f 2/10
+cfg 8 H0_homog_f0.10_a0A_N12944                N=12944 f_true=(0.1,0.1) | n_ancora(baixo,alto)=(2088,500) | f_hat baixo 0.085+-0.016 alto 0.100+-0.039 | frac. f_baixo na borda 0: 0.00 | D +0.006 deteccao D 0/10, deteccao Delta-f 0/10
+cfg 9 H1_hetero_a0B                            N=30203 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(4889,1151) | f_hat baixo 0.020+-0.009 alto 0.433+-0.017 | frac. f_baixo na borda 0: 0.00 | D +0.273 deteccao D 10/10, deteccao Delta-f 10/10
+cfg10 H2inc_composition_rises_with_gN_a0A      N=30203 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(3557,2483) | f_hat baixo 0.012+-0.011 alto 0.417+-0.016 | frac. f_baixo na borda 0: 0.30 | D +0.264 deteccao D 10/10, deteccao Delta-f 10/10
+cfg11 H2dec_composition_falls_with_gN_a0A      N=30203 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(5804,236) | f_hat baixo 0.015+-0.007 alto 0.434+-0.049 | frac. f_baixo na borda 0: 0.00 | D +0.276 deteccao D 10/10, deteccao Delta-f 10/10
+cfg12 Hclean_f0_a0A                            N=30203 f_true=(0.0,0.0) | n_ancora(baixo,alto)=(4868,1172) | f_hat baixo 0.005+-0.009 alto 0.014+-0.021 | frac. f_baixo na borda 0: 0.60 | D +0.007 deteccao D 0/10, deteccao Delta-f 0/10
+cfg13 H1a_hetero_artifact0.3kms_a0A_N12944     N=12944 f_true=(0.02,0.45) | n_ancora(baixo,alto)=(2092,496) | f_hat baixo 0.016+-0.014 alto 0.516+-0.041 | frac. f_baixo na borda 0: 0.30 | D +0.351 deteccao D 10/10, deteccao Delta-f 10/10
+
+=== T4. Comparacoes entre configs (vies do a0 do metodo ESCALAR e do CONDICIONAL; dex) ===
+escalar, homogeneo(0) vs heterogeneo(1): cfg0 +0.213 vs cfg1 +0.216 (dif -0.003 dex) Welch p=0.882 MWU p=0.427
+cond-conjunto, homogeneo(0) vs heterogeneo(1): cfg0 +0.209 vs cfg1 +0.204 (dif +0.004 dex) Welch p=0.852 MWU p=0.791
+escalar, SEM contaminacao(12) vs heterogeneo(1): cfg12 +0.212 vs cfg1 +0.216 (dif -0.004 dex) Welch p=0.859 MWU p=0.427
+escalar, SEM contaminacao(12) vs homogeneo f=0,10(0): cfg12 +0.212 vs cfg0 +0.213 (dif -0.001 dex) Welch p=0.956 MWU p=0.97
+escalar, het.(1) vs composicao cresce com gN(10): cfg1 +0.216 vs cfg10 -0.252 (dif +0.467 dex) Welch p=1.89e-12 MWU p=0.000183
+escalar, het.(1) vs composicao decresce com gN(11): cfg1 +0.216 vs cfg11 +0.595 (dif -0.380 dex) Welch p=4.71e-11 MWU p=0.000183
+cond-conjunto, het.(1) vs composicao cresce(10): cfg1 +0.204 vs cfg10 +0.229 (dif -0.024 dex) Welch p=0.265 MWU p=0.734
+cond-conjunto, het.(1) vs composicao decresce(11): cfg1 +0.204 vs cfg11 +0.195 (dif +0.010 dex) Welch p=0.807 MWU p=0.91
+escalar, het.(1) vs artefato 0,3 km/s(3): cfg1 +0.216 vs cfg3 +0.350 (dif -0.134 dex) Welch p=9.75e-06 MWU p=0.000183
+cond-conjunto, het.(1) vs artefato 0,3 km/s(3): cfg1 +0.204 vs cfg3 +0.409 (dif -0.205 dex) Welch p=1.98e-07 MWU p=0.000183
+corte-baixo, het.(1) vs artefato 0,3 km/s(3): cfg1 +0.217 vs cfg3 +0.201 (dif +0.016 dex) Welch p=0.461 MWU p=0.212
+
+=== T5. Gates (universalidade, GOF) e Delta_b medio (alto - baixo, bins 0-3) ===
+cfg 0 H0_homog_f0.10_a0A                       | Delta_b0-3 medio [-0.005, 0.007, -0.004, -0.006] sd_FPB medio [0.054, 0.051, 0.049, 0.047] sd entre-replicatas [0.032, 0.024, 0.02, 0.023] razao FPB/entre [1.67, 2.1, 2.5, 2.06] | T 0.94 (max 2.5) GOF 1.56 (max 2.7)
+cfg 1 H1_hetero_a0A                            | Delta_b0-3 medio [-0.02, -0.013, 0.006, -0.014] sd_FPB medio [0.109, 0.086, 0.072, 0.063] sd entre-replicatas [0.061, 0.032, 0.035, 0.04] razao FPB/entre [1.8, 2.68, 2.07, 1.56] | T 1.07 (max 2.1) GOF 2.86 (max 5.7)
+cfg 2 H1_hetero_newtonian                      | Delta_b0-3 medio [0.02, -0.011, 0.008, 0.011] sd_FPB medio [0.109, 0.086, 0.071, 0.065] sd entre-replicatas [0.037, 0.038, 0.041, 0.028] razao FPB/entre [2.96, 2.26, 1.74, 2.31] | T 0.90 (max 3.5) GOF 2.13 (max 5.0)
+cfg 3 H1a_hetero_artifact0.3kms_a0A            | Delta_b0-3 medio [0.289, 0.194, 0.092, 0.039] sd_FPB medio [0.131, 0.097, 0.079, 0.068] sd entre-replicatas [0.054, 0.047, 0.034, 0.056] razao FPB/entre [2.41, 2.04, 2.33, 1.21] | T 12.17 (max 18.5) GOF 22.07 (max 32.2)
+cfg 4 H1a_hetero_artifact0.1kms_a0A            | Delta_b0-3 medio [0.079, 0.041, 0.021, 0.015] sd_FPB medio [0.107, 0.082, 0.071, 0.065] sd entre-replicatas [0.046, 0.034, 0.045, 0.032] razao FPB/entre [2.36, 2.45, 1.56, 2.05] | T 2.06 (max 9.2) GOF 4.04 (max 11.7)
+cfg 5 H1_hetero_a0A_N12944                     | Delta_b0-3 medio [0.016, -0.019, 0.005, -0.004] sd_FPB medio [0.178, 0.135, 0.115, 0.103] sd entre-replicatas [0.073, 0.046, 0.063, 0.02] razao FPB/entre [2.46, 2.95, 1.84, 5.17] | T 0.62 (max 2.2) GOF 2.20 (max 5.9)
+cfg 6 H1_hetero_a0A_N6000                      | Delta_b0-3 medio [-0.006, 0.014, 0.027, -0.013] sd_FPB medio [0.28, 0.218, 0.183, 0.162] sd entre-replicatas [0.098, 0.115, 0.097, 0.067] razao FPB/entre [2.86, 1.89, 1.89, 2.42] | T 0.97 (max 4.8) GOF 1.78 (max 6.9)
+cfg 7 H1_hetero_a0A_N3000                      | Delta_b0-3 medio [0.019, 0.107, 0.052, 0.06] sd_FPB medio [0.4, 0.333, 0.271, 0.238] sd entre-replicatas [0.126, 0.134, 0.102, 0.096] razao FPB/entre [3.17, 2.47, 2.65, 2.49] | T 0.75 (max 2.7) GOF 1.52 (max 3.9)
+cfg 8 H0_homog_f0.10_a0A_N12944                | Delta_b0-3 medio [-0.009, -0.003, -0.027, -0.007] sd_FPB medio [0.081, 0.077, 0.073, 0.072] sd entre-replicatas [0.048, 0.041, 0.05, 0.041] razao FPB/entre [1.69, 1.89, 1.47, 1.77] | T 1.44 (max 2.7) GOF 2.25 (max 4.2)
+cfg 9 H1_hetero_a0B                            | Delta_b0-3 medio [-0.023, -0.024, -0.009, -0.009] sd_FPB medio [0.11, 0.084, 0.073, 0.066] sd entre-replicatas [0.036, 0.042, 0.031, 0.046] razao FPB/entre [3.05, 1.98, 2.35, 1.44] | T 1.07 (max 2.2) GOF 2.43 (max 4.7)
+cfg10 H2inc_composition_rises_with_gN_a0A      | Delta_b0-3 medio [0.02, 0.0, 0.012, 0.022] sd_FPB medio [0.13, 0.084, 0.062, 0.05] sd entre-replicatas [0.075, 0.028, 0.025, 0.026] razao FPB/entre [1.73, 3.02, 2.52, 1.91] | T 1.00 (max 3.1) GOF 2.48 (max 7.2)
+cfg11 H2dec_composition_falls_with_gN_a0A      | Delta_b0-3 medio [-0.019, -0.02, -0.016, 0.006] sd_FPB medio [0.251, 0.185, 0.156, 0.141] sd entre-replicatas [0.066, 0.072, 0.058, 0.054] razao FPB/entre [3.79, 2.58, 2.7, 2.61] | T 0.50 (max 2.2) GOF 3.65 (max 10.1)
+cfg12 Hclean_f0_a0A                            | Delta_b0-3 medio [-0.013, -0.009, -0.01, -0.012] sd_FPB medio [0.041, 0.039, 0.038, 0.037] sd entre-replicatas [0.019, 0.025, 0.017, 0.028] razao FPB/entre [2.12, 1.59, 2.19, 1.35] | T 1.47 (max 6.8) GOF 2.35 (max 6.4)
+cfg13 H1a_hetero_artifact0.3kms_a0A_N12944     | Delta_b0-3 medio [0.259, 0.165, 0.078, 0.022] sd_FPB medio [0.216, 0.155, 0.129, 0.111] sd entre-replicatas [0.12, 0.091, 0.067, 0.092] razao FPB/entre [1.81, 1.7, 1.93, 1.21] | T 4.81 (max 10.1) GOF 9.97 (max 23.9)
+gates com limiar empirico (nulo = configs 0,1,12):
+{
+ "null_configs": [
+  "0",
+  "1",
+  "12"
+ ],
+ "thresholds_95th_pct_of_null": {
+  "T_univ": 2.451609242844633,
+  "gof_chi2": 5.203679119246238,
+  "zmax": 1.1119028273202634,
+  "n_null": 30
+ },
+ "rates_exceeding_empirical_threshold": {
+  "0": {
+   "T_univ": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "zmax": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   }
+  },
+  "1": {
+   "T_univ": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "zmax": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   }
+  },
+  "2": {
+   "T_univ": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "zmax": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   }
+  },
+  "3": {
+   "T_univ": {
+    "rate": 1.0,
+    "k": 10,
+    "n": 10,
+    "wilson95": [
+     0.722,
+     1.0
+    ]
+   },
+   "gof_chi2": {
+    "rate": 1.0,
+    "k": 10,
+    "n": 10,
+    "wilson95": [
+     0.722,
+     1.0
+    ]
+   },
+   "zmax": {
+    "rate": 1.0,
+    "k": 10,
+    "n": 10,
+    "wilson95": [
+     0.722,
+     1.0
+    ]
+   }
+  },
+  "4": {
+   "T_univ": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.2,
+    "k": 2,
+    "n": 10,
+    "wilson95": [
+     0.057,
+     0.51
+    ]
+   },
+   "zmax": {
+    "rate": 0.4,
+    "k": 4,
+    "n": 10,
+    "wilson95": [
+     0.168,
+     0.687
+    ]
+   }
+  },
+  "5": {
+   "T_univ": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "zmax": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   }
+  },
+  "6": {
+   "T_univ": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "zmax": {
+    "rate": 0.2,
+    "k": 2,
+    "n": 10,
+    "wilson95": [
+     0.057,
+     0.51
+    ]
+   }
+  },
+  "7": {
+   "T_univ": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "zmax": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   }
+  },
+  "8": {
+   "T_univ": {
+    "rate": 0.2,
+    "k": 2,
+    "n": 10,
+    "wilson95": [
+     0.057,
+     0.51
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "zmax": {
+    "rate": 0.2,
+    "k": 2,
+    "n": 10,
+    "wilson95": [
+     0.057,
+     0.51
+    ]
+   }
+  },
+  "9": {
+   "T_univ": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "zmax": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   }
+  },
+  "10": {
+   "T_univ": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "zmax": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   }
+  },
+  "11": {
+   "T_univ": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.4,
+    "k": 4,
+    "n": 10,
+    "wilson95": [
+     0.168,
+     0.687
+    ]
+   },
+   "zmax": {
+    "rate": 0.0,
+    "k": 0,
+    "n": 10,
+    "wilson95": [
+     -0.0,
+     0.278
+    ]
+   }
+  },
+  "12": {
+   "T_univ": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   },
+   "zmax": {
+    "rate": 0.1,
+    "k": 1,
+    "n": 10,
+    "wilson95": [
+     0.018,
+     0.404
+    ]
+   }
+  },
+  "13": {
+   "T_univ": {
+    "rate": 0.7,
+    "k": 7,
+    "n": 10,
+    "wilson95": [
+     0.397,
+     0.892
+    ]
+   },
+   "gof_chi2": {
+    "rate": 0.8,
+    "k": 8,
+    "n": 10,
+    "wilson95": [
+     0.49,
+     0.943
+    ]
+   },
+   "zmax": {
+    "rate": 0.8,
+    "k": 8,
+    "n": 10,
+    "wilson95": [
+     0.49,
+     0.943
+    ]
+   }
+  }
+ }
+}
+
+=== T6. Caracteristicas operacionais (contagens de veredito) ===
+F3 (fator de vies bilateral) = 1.6533860773642806; faixa Estagio 2 = [1.4, 1.6]
+cfg 0 H0_homog_f0.10_a0A                       a0_true=1.082288e-10 n=10
+      stage2_scalar        {'NAO_DISTINGUE_VIES': 10}
+      stage3_gated_joint   {'NAO_DISTINGUE_VIES': 9, 'NAO_DISTINGUE_GATE': 1}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 10}
+cfg 1 H1_hetero_a0A                            a0_true=1.082288e-10 n=10
+      stage2_scalar        {'NAO_DISTINGUE_VIES': 10}
+      stage3_gated_joint   {'A_ONLY': 4, 'NAO_DISTINGUE_VIES': 5, 'NAO_DISTINGUE_GATE': 1}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 10}
+cfg 2 H1_hetero_newtonian                      a0_true=None n=10
+      stage2_scalar        {'BOTH_FALSIFIED': 10}
+      stage3_gated_joint   {'NAO_DISTINGUE_GATE': 2, 'BOTH_FALSIFIED': 8}
+      cut_low_only         {'BOTH_FALSIFIED': 10}
+cfg 3 H1a_hetero_artifact0.3kms_a0A            a0_true=1.082288e-10 n=10
+      stage2_scalar        {'BOTH_FALSIFIED': 10}
+      stage3_gated_joint   {'NAO_DISTINGUE_GATE': 10}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 10}
+cfg 4 H1a_hetero_artifact0.1kms_a0A            a0_true=1.082288e-10 n=10
+      stage2_scalar        {'NAO_DISTINGUE_VIES': 7, 'BOTH_FALSIFIED': 3}
+      stage3_gated_joint   {'NAO_DISTINGUE_GATE': 5, 'NAO_DISTINGUE_VIES': 3, 'A_ONLY': 2}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 10}
+cfg 5 H1_hetero_a0A_N12944                     a0_true=1.082288e-10 n=10
+      stage2_scalar        {'A_ONLY': 2, 'NAO_DISTINGUE_VIES': 8}
+      stage3_gated_joint   {'A_ONLY': 7, 'NAO_DISTINGUE_VIES': 2, 'NAO_DISTINGUE_GATE': 1}
+      cut_low_only         {'A_ONLY': 1, 'NAO_DISTINGUE_VIES': 9}
+cfg 6 H1_hetero_a0A_N6000                      a0_true=1.082288e-10 n=10
+      stage2_scalar        {'NAO_DISTINGUE_VIES': 7, 'A_ONLY': 2, 'BOTH_FALSIFIED': 1}
+      stage3_gated_joint   {'NAO_DISTINGUE_VIES': 6, 'NAO_DISTINGUE_GATE': 2, 'A_ONLY': 2}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 6, 'A_ONLY': 4}
+cfg 7 H1_hetero_a0A_N3000                      a0_true=1.082288e-10 n=10
+      stage2_scalar        {'A_ONLY': 4, 'NAO_DISTINGUE_VIES': 4, 'BOTH_FALSIFIED': 2}
+      stage3_gated_joint   {'NAO_DISTINGUE_VIES': 3, 'NAO_DISTINGUE_CI': 6, 'NAO_DISTINGUE_GATE': 1}
+      cut_low_only         {'A_ONLY': 6, 'NAO_DISTINGUE_VIES': 4}
+cfg 8 H0_homog_f0.10_a0A_N12944                a0_true=1.082288e-10 n=10
+      stage2_scalar        {'A_ONLY': 2, 'NAO_DISTINGUE_VIES': 8}
+      stage3_gated_joint   {'A_ONLY': 5, 'NAO_DISTINGUE_GATE': 3, 'NAO_DISTINGUE_VIES': 2}
+      cut_low_only         {'A_ONLY': 2, 'NAO_DISTINGUE_VIES': 8}
+cfg 9 H1_hetero_a0B                            a0_true=6.800218e-10 n=10
+      stage2_scalar        {'NAO_DISTINGUE_VIES': 10}
+      stage3_gated_joint   {'NAO_DISTINGUE_VIES': 5, 'B_ONLY': 5}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 10}
+cfg10 H2inc_composition_rises_with_gN_a0A      a0_true=1.082288e-10 n=10
+      stage2_scalar        {'BOTH_FALSIFIED': 10}
+      stage3_gated_joint   {'NAO_DISTINGUE_VIES': 8, 'NAO_DISTINGUE_GATE': 2}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 10}
+cfg11 H2dec_composition_falls_with_gN_a0A      a0_true=1.082288e-10 n=10
+      stage2_scalar        {'BOTH_FALSIFIED': 10}
+      stage3_gated_joint   {'NAO_DISTINGUE_CI': 4, 'NAO_DISTINGUE_GATE': 4, 'NAO_DISTINGUE_VIES': 2}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 10}
+cfg12 Hclean_f0_a0A                            a0_true=1.082288e-10 n=10
+      stage2_scalar        {'NAO_DISTINGUE_VIES': 10}
+      stage3_gated_joint   {'NAO_DISTINGUE_VIES': 9, 'NAO_DISTINGUE_GATE': 1}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 10}
+cfg13 H1a_hetero_artifact0.3kms_a0A_N12944     a0_true=1.082288e-10 n=10
+      stage2_scalar        {'BOTH_FALSIFIED': 7, 'NAO_DISTINGUE_VIES': 3}
+      stage3_gated_joint   {'NAO_DISTINGUE_GATE': 9, 'NAO_DISTINGUE_VIES': 1}
+      cut_low_only         {'NAO_DISTINGUE_VIES': 9, 'A_ONLY': 1}
+
+=== T8. Regra de decisao do rascunho IMPLEMENTADA MAIS COMPLETAMENTE do que em T6 (L1 gates, L2 gatilhos 1/2/9, L3 CI, L4 largura, L5 vies) ===
+    Nao implementados aqui: L0 (pre-condicoes), gatilho 6 (sensibilidade a B/seed), gatilho 10 (variantes), gatilhos 3/8 (so' exigem debunker);
+    gatilho 7 (heterogeneidade ausente) excluido de proposito: nas configs homogeneas (0, 8, 12) ele dispararia por construcao.
+cfg 0 H0_homog_f0.10_a0A                       a0_true=1.082288e-10 | {'NAO_DISTINGUE[VIES]': 9, 'NAO_DISTINGUE[GATE]': 1}
+cfg 1 H1_hetero_a0A                            a0_true=1.082288e-10 | {'NAO_DISTINGUE[LARGURA]': 8, 'NAO_DISTINGUE[GATE]': 1, 'NAO_DISTINGUE[VIES]': 1}
+cfg 2 H1_hetero_newtonian                      a0_true=None | {'NAO_DISTINGUE[GATE]': 2, 'NAO_DISTINGUE[GATILHO1]': 7, 'NAO_DISTINGUE[LARGURA]': 1}
+cfg 3 H1a_hetero_artifact0.3kms_a0A            a0_true=1.082288e-10 | {'NAO_DISTINGUE[GATE]': 10}
+cfg 4 H1a_hetero_artifact0.1kms_a0A            a0_true=1.082288e-10 | {'NAO_DISTINGUE[GATE]': 5, 'NAO_DISTINGUE[LARGURA]': 4, 'NAO_DISTINGUE[VIES]': 1}
+cfg 5 H1_hetero_a0A_N12944                     a0_true=1.082288e-10 | {'NAO_DISTINGUE[LARGURA]': 9, 'NAO_DISTINGUE[GATE]': 1}
+cfg 6 H1_hetero_a0A_N6000                      a0_true=1.082288e-10 | {'NAO_DISTINGUE[LARGURA]': 8, 'NAO_DISTINGUE[GATE]': 2}
+cfg 7 H1_hetero_a0A_N3000                      a0_true=1.082288e-10 | {'NAO_DISTINGUE[LARGURA]': 3, 'NAO_DISTINGUE[CI]': 6, 'NAO_DISTINGUE[GATE]': 1}
+cfg 8 H0_homog_f0.10_a0A_N12944                a0_true=1.082288e-10 | {'NAO_DISTINGUE[LARGURA]': 7, 'NAO_DISTINGUE[GATE]': 3}
+cfg 9 H1_hetero_a0B                            a0_true=6.800218e-10 | {'NAO_DISTINGUE[VIES]': 5, 'B_ONLY': 5}
+cfg10 H2inc_composition_rises_with_gN_a0A      a0_true=1.082288e-10 | {'NAO_DISTINGUE[VIES]': 8, 'NAO_DISTINGUE[GATE]': 2}
+cfg11 H2dec_composition_falls_with_gN_a0A      a0_true=1.082288e-10 | {'NAO_DISTINGUE[CI]': 4, 'NAO_DISTINGUE[GATE]': 4, 'NAO_DISTINGUE[LARGURA]': 2}
+cfg12 Hclean_f0_a0A                            a0_true=1.082288e-10 | {'NAO_DISTINGUE[VIES]': 6, 'NAO_DISTINGUE[GATE]': 1, 'NAO_DISTINGUE[GATILHO2]': 3}
+cfg13 H1a_hetero_artifact0.3kms_a0A_N12944     a0_true=1.082288e-10 | {'NAO_DISTINGUE[GATE]': 9, 'NAO_DISTINGUE[LARGURA]': 1}
+
+=== T7. Varredura em N (H1 heterogeneo, a0_true = a0_A): configs 7 (3000), 6 (6000), 5 (12944), 1 (30203) ===
+N= 3000 (cfg7): n_ancora alto=118 (min 106) n_bin0 alto=115 n_ancora baixo=482 | sd(f_hat alto) entre reps=0.066, sd bootstrap medio=0.169 | sd(f_hat baixo)=0.020 | deteccao D 8/10 Delta-f 2/10 | vies a0 escalar +0.31+-0.16, cond +0.29+-0.14 | largura IC cond-recal 2.10 dex (a0_B/a0_A = 0.80 dex)
+N= 6000 (cfg6): n_ancora alto=229 (min 206) n_bin0 alto=234 n_ancora baixo=971 | sd(f_hat alto) entre reps=0.056, sd bootstrap medio=0.116 | sd(f_hat baixo)=0.014 | deteccao D 10/10 Delta-f 10/10 | vies a0 escalar +0.27+-0.09, cond +0.25+-0.08 | largura IC cond-recal 1.02 dex (a0_B/a0_A = 0.80 dex)
+N=12944 (cfg5): n_ancora alto=487 (min 457) n_bin0 alto=490 n_ancora baixo=2101 | sd(f_hat alto) entre reps=0.029, sd bootstrap medio=0.070 | sd(f_hat baixo)=0.016 | deteccao D 10/10 Delta-f 10/10 | vies a0 escalar +0.22+-0.07, cond +0.21+-0.08 | largura IC cond-recal 0.62 dex (a0_B/a0_A = 0.80 dex)
+N=30203 (cfg1): n_ancora alto=1140 (min 1115) n_bin0 alto=1148 n_ancora baixo=4900 | sd(f_hat alto) entre reps=0.026, sd bootstrap medio=0.043 | sd(f_hat baixo)=0.015 | deteccao D 10/10 Delta-f 10/10 | vies a0 escalar +0.22+-0.06, cond +0.20+-0.06 | largura IC cond-recal 0.40 dex (a0_B/a0_A = 0.80 dex)
+
+fim.

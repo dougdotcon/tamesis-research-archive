@@ -1,0 +1,10 @@
+limiar in-sample [2.45 1.11 5.2 ]
+cfg 3 H1a_hetero_artifact0.3kms_a0A              taxa 'qualquer gate' in-sample 1.0 | sob incerteza do limiar: mediana 1.0, IC90 [1.0,1.0]
+cfg 4 H1a_hetero_artifact0.1kms_a0A              taxa 'qualquer gate' in-sample 0.5 | sob incerteza do limiar: mediana 0.5, IC90 [0.1,0.6]
+cfg13 H1a_hetero_artifact0.3kms_a0A_N12944       taxa 'qualquer gate' in-sample 0.9 | sob incerteza do limiar: mediana 0.9, IC90 [0.8,0.9]
+cfg 5 H1_hetero_a0A_N12944                       taxa 'qualquer gate' in-sample 0.1 | sob incerteza do limiar: mediana 0.1, IC90 [0.0,0.3]
+cfg 8 H0_homog_f0.10_a0A_N12944                  taxa 'qualquer gate' in-sample 0.3 | sob incerteza do limiar: mediana 0.3, IC90 [0.0,0.5]
+cfg10 H2inc_composition_rises_with_gN_a0A        taxa 'qualquer gate' in-sample 0.2 | sob incerteza do limiar: mediana 0.2, IC90 [0.1,0.4]
+cfg11 H2dec_composition_falls_with_gN_a0A        taxa 'qualquer gate' in-sample 0.4 | sob incerteza do limiar: mediana 0.4, IC90 [0.2,0.4]
+FP qualquer-gate nos 30 nulos: in-sample 0.1 | (otimismo: limiar e FP medidos nos mesmos dados)
+FP qualquer-gate fora-da-amostra (bootstrap cruzado): media 0.118475 IC90 [0.  0.3]

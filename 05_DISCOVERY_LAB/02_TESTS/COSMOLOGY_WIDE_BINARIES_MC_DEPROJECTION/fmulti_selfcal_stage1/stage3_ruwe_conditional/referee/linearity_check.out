@@ -1,0 +1,7 @@
+n estrato alto: 2556 | delta(fa) = [ 0.163  0.052  0.005 -0.021  0.06 ] | delta(fb) = [-0.118 -0.153 -0.162 -0.177 -0.069]
+f=0.45 t=+0.33 erro linear por bin (lin-exato): [-0.018 -0.012 -0.004 -0.004 -0.004] | max|erro|=0.018 dex
+f=0.30 t=-0.67 erro linear por bin (lin-exato): [0.067 0.039 0.025 0.025 0.011] | max|erro|=0.067 dex
+f=0.20 t=-1.33 erro linear por bin (lin-exato): [0.165 0.093 0.055 0.055 0.036] | max|erro|=0.165 dex
+f=0.10 t=-2.00 erro linear por bin (lin-exato): [0.277 0.158 0.095 0.095 0.059] | max|erro|=0.277 dex
+f=0.70 t=+2.00 erro linear por bin (lin-exato): [0.247 0.134 0.09  0.057 0.06 ] | max|erro|=0.247 dex
+f=0.90 t=+3.33 erro linear por bin (lin-exato): [0.602 0.432 0.342 0.225 0.2  ] | max|erro|=0.602 dex

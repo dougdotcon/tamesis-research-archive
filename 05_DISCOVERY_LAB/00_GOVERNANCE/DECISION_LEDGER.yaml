@@ -10117,3 +10117,41 @@ decisions:
       de Tamesis. SPARC-004 permanece CLOSED_INCONCLUSIVE ate decisao
       humana. Holdout selado intocado. Linhas matematicas (H1, C(gamma))
       inalteradas; DISC-DEC-153 mantido.
+
+  - id: DISC-DEC-156
+    date: 2026-10-25
+    decision: >
+      Integra a frente de DISC-DEC-155 (rascunho SPARC-FMULTI-STAGE3,
+      f_multi condicional a RUWE) apos spot-check da sessao e referee
+      hostil independente. Resultado: o rascunho NAO e candidato a LOCK;
+      status permanece DRAFT; SPARC-004 permanece CLOSED_INCONCLUSIVE;
+      holdout selado intocado; nenhum dado real baixado ou computado.
+      Achados do referee incorporados como correcoes/notas datadas no
+      proprio rascunho: F1 (alta) a regra de decisao e algebricamente
+      incapaz de emitir A_ONLY ou BOTH_FALSIFIED (vies intrinseco do
+      estimador ~+0,21 dex contra limite de largura 0,363 dex) -- teste
+      sem poder, e "0 falsificacoes falsas em 130" e vacuo; F2 (alta)
+      brechas de texto que permitiriam tocar dado real/split inteiro
+      antes do LOCK (default correto: NAO_EXECUTAVEL); F3 N_A_MIN
+      incompativel com a regra completa; F4-F8 notas (gates calibrados
+      com 30 nulos, tautologia S2, ICs largos, interpolacao do bootstrap
+      so validada no interior). Reproducao independente de 4 celulas:
+      diferenca exatamente 0 (determinismo, nao correcao do estimador).
+      Resultado epistemico: (i) a causa raiz do vies de +0,21 dex do
+      estimador (cfg 12, sem contaminacao) e desconhecida e merece
+      investigacao propria antes de qualquer Estagio 3; (ii) a premissa
+      de DISC-CLAIM-008 ("heterogeneidade => a0 nao confiavel") NAO
+      decorre sozinha do achado RUWE (nota I-4/F5; registro nao
+      alterado). Proximos passos de decisao exclusivamente humana:
+      resolver J1-J19, decidir se investiga-se o vies do estimador,
+      e se algum LOCK/uso do holdout e desejado. Nenhuma onda
+      adicional autorizada.
+    scope: >
+      Arquivos: stage3_ruwe_conditional/ (rascunho, simulacao sintetica,
+      referee/), DECISION_LEDGER.yaml, DISCOVERY_LAB_STATE.md, README.md.
+      Seeds usadas: 20260955000-20260955839 (replicas) e 20260955960-973
+      (testes/exploracao), dentro do bloco reservado.
+    untouched_safeguards: >
+      Nenhuma reivindicacao de confirmacao de Tamesis nem de Problema do
+      Milenio. Resultados sinteticos nao sao evidencia fisica. DISC-DEC-153
+      mantido.
