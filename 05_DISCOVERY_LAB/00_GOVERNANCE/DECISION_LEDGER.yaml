@@ -10070,3 +10070,50 @@ decisions:
       (nao-despacho da onda 35) mantido. H1, (U1), (U2), (C'), (U), (B),
       (H-ces), C(gamma) permanecem exatamente como registrados --
       formalmente ABERTOS. Documentos de 2026-10-12 nao reescritos.
+
+  - id: DISC-DEC-155
+    date: 2026-10-25
+    decision: >
+      Autoriza UMA frente, SOMENTE de rascunho de pre-registro, para a
+      Linha G (cosmologia, SPARC/binarias largas Gaia): redigir
+      PREREGISTRATION_STAGE3_DRAFT.md de SPARC-FMULTI-STAGE3
+      (calibracao de f_multi CONDICIONAL a RUWE), o caminho de
+      reabertura que o proprio TEST_QUEUE.yaml ja nomeia para
+      DISC-COSMOLOGY-MOND-SPARC-004 (fmulti_stage2_final_result e
+      DISC-CLAIM-008). DIAGNOSTICO DE DEFASAGEM (nota, nao correcao de
+      conteudo do autor): a secao "Linha G" de
+      DIAGNOSTICO_AUTOMACAO_LINHAS_PESQUISA.md descreve a linha como se
+      precisasse de um PREREGISTRATION.md do zero em
+      02_TESTS/COSMOLOGY_GAIA_MCMC/ (diretorio inexistente) com
+      "corte RUWE<1.4 e modelo de mistura"; na realidade SPARC-004 ja
+      teve Estagio 1 (validacao sintetica), Estagio 2 LOCKED
+      (DISC-DEC-029) e fechamento CLOSED_INCONCLUSIVE (DISC-DEC-032) com
+      reproducao adversarial CONFIRMED e debunker mostrando que o
+      f_multi escalar unico esta mal especificado (subgrupo RUWE-alto,
+      19% da amostra, com excesso robusto). O holdout selado (12.944
+      sistemas) segue INTOCADO. HIPOTESE DA FRENTE (do rascunho, nao do
+      mundo fisico): e possivel pre-declarar, antes de qualquer dado
+      real, um modelo f_multi(RUWE) cuja recuperacao sintetica distinga
+      o caso condicional do escalar. CRITERIO DE REFUTACAO DA FRENTE:
+      o rascunho e rejeitado se o referee hostil achar (a) qualquer
+      caminho que permita tocar o holdout ou dado real sem lock
+      posterior, (b) zona de veredito ambigua/reinterpretavel
+      pos-hoc, (c) validacao sintetica incapaz de distinguir
+      condicional de escalar, ou (d) inconsistencia com
+      PREREGISTRATION_STAGE2.md/TEST_QUEUE.yaml. LIMITES: nenhum dado
+      real baixado ou computado; holdout nao aberto; status do
+      rascunho permanece DRAFT. Travar o pre-registro (LOCK), baixar o
+      catalogo e abrir o holdout sao decisoes SEPARADAS e reservadas ao
+      autor humano. Bloco de seeds reservado: 20260955000-20260955999
+      (somente simulacao sintetica). Verificacao: spot-check
+      independente da sessao antes do referee hostil.
+    scope: >
+      Arquivos criados apenas em 05_DISCOVERY_LAB/02_TESTS/
+      COSMOLOGY_WIDE_BINARIES_MC_DEPROJECTION/fmulti_selfcal_stage1/
+      stage3_ruwe_conditional/. Nenhuma edicao de resultados anteriores.
+      Nenhum comando git por agentes.
+    untouched_safeguards: >
+      Nenhuma reivindicacao de Problema do Milenio nem de confirmacao
+      de Tamesis. SPARC-004 permanece CLOSED_INCONCLUSIVE ate decisao
+      humana. Holdout selado intocado. Linhas matematicas (H1, C(gamma))
+      inalteradas; DISC-DEC-153 mantido.

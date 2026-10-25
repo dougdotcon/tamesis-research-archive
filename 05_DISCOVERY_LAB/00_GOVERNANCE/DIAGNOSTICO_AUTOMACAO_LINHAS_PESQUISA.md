@@ -122,3 +122,18 @@ Quando você decidir trabalhar manualmente para desbloquear as próximas frentes
 1. **Passo 1 (Mais fácil — 1 a 2 dias):** Pré-registrar a **Linha G (Cosmologia MCMC)**. Criar o `PREREGISTRATION.md` com modelo de multiplicidade para binárias do Gaia DR3 e plugar o script no daemon da 5090.
 2. **Passo 2 (Intermediário — 1 semana):** Formalizar um modelo restrito da **Linha M (Estabilidade)**. Escolher um oscilador não-linear simples e usar o SymPy para buscar funções de Lyapunov polinomiais certificadas.
 3. **Passo 3 (Teórico profundo — médio prazo):** Desenvolver um modelo de brinquedo (*toy model*) de Lindblad para a **Linha C/A**, testando relaxação de semigrupos irreversíveis em redes finitas de 10 a 50 nós.
+
+---
+
+> **Nota datada (2026-10-25, `DISC-DEC-155`) — Linha G defasada em relação ao registro.**
+> A seção "Linha G" acima descreve a linha como se exigisse um
+> `PREREGISTRATION.md` do zero em `02_TESTS/COSMOLOGY_GAIA_MCMC/` (diretório
+> inexistente). O registro mostra que `DISC-COSMOLOGY-MOND-SPARC-004` já passou
+> por Estágio 1 (validação sintética), Estágio 2 `LOCKED` (`DISC-DEC-029`) e
+> fechamento `CLOSED_INCONCLUSIVE` (`DISC-DEC-032`, `DISC-CLAIM-008`): o
+> `f_multi` escalar único está mal especificado (subgrupo RUWE-alto, ~19% da
+> amostra). O caminho de reabertura legítimo, já escrito no `TEST_QUEUE.yaml`,
+> é calibrar `f_multi` condicionalmente a RUWE, com pré-registro próprio; o
+> holdout selado (12.944 sistemas) segue intocado. Um modelo de mistura/MCMC
+> novo seria uma frente distinta e também exigiria pré-registro próprio.
+> Esta nota não altera o restante do diagnóstico.
