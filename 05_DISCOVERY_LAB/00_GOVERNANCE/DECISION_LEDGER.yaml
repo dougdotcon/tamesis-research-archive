@@ -10155,3 +10155,32 @@ decisions:
       Nenhuma reivindicacao de confirmacao de Tamesis nem de Problema do
       Milenio. Resultados sinteticos nao sao evidencia fisica. DISC-DEC-153
       mantido.
+
+  - id: DISC-DEC-157
+    date: 2026-10-25
+    decision: >
+      NAO-DESPACHO explicito (no [8] do loop de governanca): nenhuma
+      nova frente autorizada neste ciclo. Condicao de parada cumprida:
+      (a) nao-despacho e (b) as proximas acoes sao de escopo exclusivo
+      do autor humano. Estado: DISC-DEC-153 (onda 35 de matematica nao
+      despachada) mantido; Linha G (SPARC-FMULTI-STAGE3) integrada como
+      DRAFT nao-lockavel em DISC-DEC-156; H1/M-CLUST(b) e C(gamma)
+      descansados; demais linhas do diagnostico bloqueadas por
+      hardware, dados ou equacoes ausentes (nao reabrir sem
+      PREREGISTRATION.md novo). Auditoria pontual de itens do corpus
+      openai/math nao foi iniciada: exige escolha humana dos itens e
+      de como verificar (Lean/leitura), alem de ser alegacao externa
+      CLAIM_UNDER_AUDIT. Decisoes humanas pendentes: (1) investigar o
+      vies de +0,21 dex do estimador de f_multi (causa desconhecida)
+      antes de qualquer Estagio 3; (2) arquivar o rascunho ou resolver
+      J1-J19; (3) destino do ramo origin/research/auto (mesclar so os
+      resumos, arquivar ou manter) e tolerancia relativa no teste do
+      ciclo 2026-10-22; (4) se deseja a auditoria openai/math e quais
+      itens. Retomar o loop apenas apos mudanca externa ou instrucao
+      humana.
+    scope: >
+      Apenas registro de decisao em DECISION_LEDGER.yaml. Nenhum
+      conteudo matematico ou experimental alterado.
+    untouched_safeguards: >
+      Nenhuma reivindicacao de Problema do Milenio nem de confirmacao
+      de Tamesis. Holdout selado intocado.
