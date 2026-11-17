@@ -1,0 +1,30 @@
+........................................................F.               [100%]
+=================================== FAILURES ===================================
+______________ TestExactRationalValues.test_exact_value[3-g6--90] ______________
+
+self = <test_step.TestExactRationalValues object at 0x7f53a58dc6b0>, mm = 3
+g = 1/3, expected = -90
+
+    @pytest.mark.parametrize("mm,g,expected", [
+        (0, Rational(1, 2), 0),
+        (1, Rational(1, 2), -4),
+        (2, Rational(1, 2), -14),
+        (3, Rational(1, 2), -30),
+        (1, Rational(1, 3), -12),
+        (2, Rational(1, 3), -39),
+        (3, Rational(1, 3), -90),
+        (1, Rational(4, 5), Rational(-5, 8)),
+    ])
+    def test_exact_value(self, mm, g, expected):
+>       assert A(mm, g) == expected, (
+            f"A_{mm}({g}) = {A(mm, g)}, expected {expected}")
+E       AssertionError: A_3(1/3) = -81, expected -90
+E       assert -81 == -90
+E        +  where -81 = A(3, 1/3)
+
+test_step.py:112: AssertionError
+=========================== short test summary info ============================
+FAILED test_step.py::TestExactRationalValues::test_exact_value[3-g6--90] - As...
+1 failed, 57 passed in 1.74s
+
+--- stderr ---

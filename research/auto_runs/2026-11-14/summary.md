@@ -1,0 +1,11 @@
+# Ciclo Linha D — 2026-11-14 03:24 BRT
+- Status do ciclo: **TESTE_FALHOU**
+- Passo: numeric_probe — Structural identities of inner-expansion coefficient A_m(γ): partial-sum closed form and generating function
+- Justificativa: Per Regra 6: a rota de crossover está esgotada (equivalente a C(γ)); qualquer extensão local é autoconsistência, não progresso. Este probe de sanidade verifica as identidades estabelecidas de A_m(γ) e deriva/testa DUAS identidades novas ainda não catalogadas: (a) a soma parcial em forma fechada Σ_{m
+- Teste: FALHOU/NÃO RODOU (rede isolada: True)
+- Impacto em claims: nenhum (C(γ) continua ABERTO; nada aqui é prova)
+- Avaliador fixo e pré-registros: checksums idênticos antes/depois
+- Nota: heavy backend: desligado
+- EXPLORATÓRIO: não é onda autorizada; DISC-DEC-153 permanece; ledgers intocados.
+- Modelo: agy:claude-opus-4-6-thinking
+- Revisão humana obrigatória antes de qualquer uso.
