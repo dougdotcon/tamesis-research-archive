@@ -1,0 +1,11 @@
+# Ciclo Linha D — 2026-11-17 03:26 BRT
+- Status do ciclo: **TESTE_PASSOU**
+- Passo: special_case — Structural special case: vanishing linear coefficient of A_m at γ = 2/3
+- Justificativa: O coeficiente interno A_m(γ) = m(m+3)/(2γ) − m(m+1)/γ² decompõe-se como α(γ)m² + β(γ)m com α=(γ−2)/(2γ²), β=(3γ−2)/(2γ²). O coeficiente linear β anula-se UNICAMENTE em γ=2/3 no intervalo (0,1), produzindo a identidade pura-quadrática A_m(2/3)=−3m²/2 — um ponto de teste NOVO não coberto pelas checage
+- Teste: PASSOU (rede isolada: True)
+- Impacto em claims: nenhum (C(γ) continua ABERTO; nada aqui é prova)
+- Avaliador fixo e pré-registros: checksums idênticos antes/depois
+- Nota: heavy backend: desligado
+- EXPLORATÓRIO: não é onda autorizada; DISC-DEC-153 permanece; ledgers intocados.
+- Modelo: agy:claude-opus-4-6-thinking
+- Revisão humana obrigatória antes de qualquer uso.
